@@ -1,0 +1,4 @@
+cocacola=1
+fantaNaranja=1
+fantaLimon=1
+nestea=1
