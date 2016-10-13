@@ -9,12 +9,12 @@ public class Seleccion extends Tecla {
 	}
 	
 	public Seleccion(){
-		clas=new Clasificador();
+		//clas=new Clasificador();
 		
 	}
 
 	public void elegirProducto(){
-		clas.SeleccionarProducto();
+		
 	}
 	
 	

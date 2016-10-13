@@ -20,6 +20,8 @@ public class Clasificador {
 	
 	public void insertarMonedas(){
 		
+		
+		
 	}
 	
 	public int retornarMoneda(){

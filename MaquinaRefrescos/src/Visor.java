@@ -9,7 +9,7 @@ public class Visor {
 	
 	
 	public void mostarBienvenida(){
-	    System.out.println("Bienvenido a tu m·quina favorita");
+	    System.out.println("Bienvenido a tu m√°quina favorita");
 	}
 	
 	public void mostrarSaldo(int saldo){
