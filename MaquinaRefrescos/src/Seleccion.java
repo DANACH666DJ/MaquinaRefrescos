@@ -15,6 +15,8 @@ public class Seleccion extends Tecla {
 
 	public void elegirProducto(){
 		
+		
+		
 	}
 	
 	

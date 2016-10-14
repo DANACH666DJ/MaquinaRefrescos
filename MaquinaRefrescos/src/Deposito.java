@@ -9,7 +9,7 @@ public class Deposito {
 		cantidad=0;
 	}
 	
-	public void aÃ±adir(){
+	public void añadir(){
 		cantidad++;
 	}
 	

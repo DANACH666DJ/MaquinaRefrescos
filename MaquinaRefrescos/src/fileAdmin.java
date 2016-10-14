@@ -31,8 +31,6 @@ public class fileAdmin {
 		bf.close();
 		fr.close();
 		
-		
-		
 	}
 	
 	public String CantidadBebidas(String producto){
@@ -40,6 +38,9 @@ public class fileAdmin {
 		
 		
 	}
+	
+	
+	
 	
 	
 }

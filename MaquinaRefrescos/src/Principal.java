@@ -6,7 +6,12 @@ public class Principal {
         private Visor visor;
         private Clasificador clas;
         private Dispensador dispen;
-        private Deposito depost;
+        private Deposito depost5;
+        private Deposito depost10;
+        private Deposito depost20;
+        private Deposito depost50;
+        private Deposito depost1;
+        private Deposito depost2;
         private fileAdmin fich1;
         private fileAdmin fich2;
         private fileAdmin fich3;
@@ -23,10 +28,16 @@ public class Principal {
 			visor=new Visor();
 			clas=new Clasificador();
 			dispen=new Dispensador();
-			depost=new Deposito();
 			this.fich1=fich1;
 			this.fich2=fich2;
 			this.fich3=fich3;
+			depost5=new Deposito();
+			depost10=new Deposito();
+			depost20=new Deposito();
+			depost50=new Deposito();
+			depost1=new Deposito();
+			depost2=new Deposito();
+			
 			
 			
 		}
@@ -62,13 +73,13 @@ public class Principal {
 							op1=teclado.nextInt();
 							switch (op1) {
 							case 1:
-								
 								producto="cocacola";
 								cant=Integer.parseInt(fich1.CantidadBebidas(producto));
 								System.out.println(cant);
 								break;
+							
                              case 2:
-								
+								InsertarMoneda();
 								break;
                              case 3:
  								
@@ -83,7 +94,7 @@ public class Principal {
 						    
 							break;
 						case 2:// 
-							insertarMoneda();
+							
 							break;
 						case 3:
 							
@@ -107,9 +118,11 @@ public class Principal {
 
 		}
 		
-		public void insertarMoneda(){
-			clas.insertarMonedas();
+		public void InsertarMoneda(){
+			
 		}
+		
+		
 		
 		
 	
