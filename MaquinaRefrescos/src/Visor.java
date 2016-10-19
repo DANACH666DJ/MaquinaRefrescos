@@ -13,7 +13,7 @@ public class Visor {
 	}
 	
 	public void mostrarSaldo(int saldo){
-		System.out.println(saldo);
+		System.out.println("El saldo disponible es : "+saldo);
 	}
 	
 	public void mostrarPrecio(){

@@ -24,7 +24,6 @@ public class Clasificador {
 		saldo += moneda;
 		visor.mostrarSaldo(saldo);
 		
-		
 	}
 	
 	public int retornarMoneda(){
@@ -69,10 +68,13 @@ public class Clasificador {
 		this.selec = selec;
 	}
 
-	
+	public void setDepos(HashMap<Integer, Deposito> depos2) {
+		// TODO Auto-generated method stub
+		
+		
+	}
 
 	
-	
-	
+
 
 }

@@ -2,11 +2,13 @@
 public class Deposito {
 	private int valor;
 	private int cantidad;
+	private Clasificador clasf;
 	
 	
-	public Deposito(){
+	public Deposito(int valor,int cantidad){
 		valor=0;
 		cantidad=0;
+		
 	}
 	
 	public void añadir(){

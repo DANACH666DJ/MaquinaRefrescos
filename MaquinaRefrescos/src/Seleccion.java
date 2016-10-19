@@ -9,7 +9,7 @@ public class Seleccion extends Tecla {
 	}
 	
 	public Seleccion(){
-		//clas=new Clasificador();
+		
 		
 	}
 

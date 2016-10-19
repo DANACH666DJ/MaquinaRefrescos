@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Principal {
@@ -6,41 +7,88 @@ public class Principal {
         private Visor visor;
         private Clasificador clas;
         private Dispensador dispen;
-        private Deposito depost5;
-        private Deposito depost10;
-        private Deposito depost20;
-        private Deposito depost50;
-        private Deposito depost1;
-        private Deposito depost2;
+
         private fileAdmin fich1;
         private fileAdmin fich2;
         private fileAdmin fich3;
         private String producto;
         private int cant;
+
         
         
         
         
         
 		public Principal(fileAdmin fich1,fileAdmin fich2,fileAdmin fich3){
+			
+			HashMap<Integer,Deposito> depos;
+			
 			teclado = new Scanner(System.in); // Para leer las opciones de teclado
 			selec=new Seleccion();
 			visor=new Visor();
 			clas=new Clasificador();
 			dispen=new Dispensador();
+		
 			this.fich1=fich1;
 			this.fich2=fich2;
 			this.fich3=fich3;
-			depost5=new Deposito();
-			depost10=new Deposito();
-			depost20=new Deposito();
-			depost50=new Deposito();
-			depost1=new Deposito();
-			depost2=new Deposito();
+			depos = crearDepositosAMano();
+			clas.setDepos(depos);
+			
 			
 			
 			
 		}
+		
+		//metodo qye al restar actualiza el fichero
+		
+		//public...{
+		//}
+		
+		//
+		public HashMap<Integer,Deposito> crearDepositosAMano(){
+	        HashMap<Integer,Deposito> auxDepos;
+	        Deposito depost5;
+	        Deposito depost10;
+	        Deposito depost20;
+	        Deposito depost50;
+	        Deposito depost1;
+	        Deposito depost2;
+			
+	        //int[] valorMonedas = {200, 100, 50, 20, 10, 5};
+	        //lees de fichero [6, 5, 9, 10, 165, 6]
+	        //arrayList.add(new Deposito(valorMoneda[i], aux[i]);
+	        //OTYRO METODO A PARTE: 
+	        //restas cantidad al devolver una moneda
+	        //vuelves a escribir en fichero para guardar la cantidad que has restado
+	        
+	        //en un bucle creo un deposito con el valor y la cantidad que toque
+	       // Deposito dep = new Deposito(valorMonedas[i], aux[i]);
+	        
+	        
+	    	auxDepos=new HashMap<Integer,Deposito>();
+	        
+			depost5=new Deposito(5,10);
+			auxDepos.put(5,depost5);
+			depost10=new Deposito(10,10);
+			auxDepos.put(10, depost10);
+			depost20=new Deposito(20,10);
+			auxDepos.put(20, depost20);
+			depost50=new Deposito(50,10);
+			auxDepos.put(50, depost50);
+			depost1=new Deposito(1,10);
+			auxDepos.put(1, depost1);
+			depost2=new Deposito(2,10);	
+			auxDepos.put(2, depost2);
+			
+			
+			return auxDepos;
+		}
+		
+//		public HashMap<Integer,Deposito> crearDepositosFichero(){
+//			
+//		}
+		
 		
 		
 		
