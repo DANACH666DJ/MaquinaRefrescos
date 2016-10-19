@@ -6,28 +6,57 @@ public class Principal {
         private Seleccion selec;
         private Visor visor;
         private Clasificador clas;
-        private Dispensador dispen;
+       
+        
 
         private fileAdmin fich1;
         private fileAdmin fich2;
         private fileAdmin fich3;
         private String producto;
         private int cant;
+        
+        
+       
+        /**
+         * Constructor sin parametros
+         */
+        public Principal (){
+        	
 
+			HashMap<Integer,Deposito> depos;
+			HashMap<String,Dispensador> dispen;
+        	
+			teclado = new Scanner(System.in); // Para leer las opciones de teclado
+			selec=new Seleccion();
+			visor=new Visor();
+			clas=new Clasificador();
+			
+			depos = crearDepositosAMano();
+			clas.setDepos(depos);
+			
+			dispen=crearDispensadoresAMano();
+			clas.setDispensadores(dispen);
+			
+        }
         
         
-        
-        
-        
+        /**
+         * 
+         * @param fich1
+         * @param fich2
+         * @param fich3
+         */
 		public Principal(fileAdmin fich1,fileAdmin fich2,fileAdmin fich3){
 			
 			HashMap<Integer,Deposito> depos;
+			HashMap<String,Dispensador> dispen;
 			
 			teclado = new Scanner(System.in); // Para leer las opciones de teclado
 			selec=new Seleccion();
 			visor=new Visor();
 			clas=new Clasificador();
-			dispen=new Dispensador();
+			
+			
 		
 			this.fich1=fich1;
 			this.fich2=fich2;
@@ -35,17 +64,12 @@ public class Principal {
 			depos = crearDepositosAMano();
 			clas.setDepos(depos);
 			
-			
+			dispen=crearDispensadoresAMano();
+			clas.setDispensadores(dispen);
 			
 			
 		}
 		
-		//metodo qye al restar actualiza el fichero
-		
-		//public...{
-		//}
-		
-		//
 		public HashMap<Integer,Deposito> crearDepositosAMano(){
 	        HashMap<Integer,Deposito> auxDepos;
 	        Deposito depost5;
@@ -55,16 +79,6 @@ public class Principal {
 	        Deposito depost1;
 	        Deposito depost2;
 			
-	        //int[] valorMonedas = {200, 100, 50, 20, 10, 5};
-	        //lees de fichero [6, 5, 9, 10, 165, 6]
-	        //arrayList.add(new Deposito(valorMoneda[i], aux[i]);
-	        //OTYRO METODO A PARTE: 
-	        //restas cantidad al devolver una moneda
-	        //vuelves a escribir en fichero para guardar la cantidad que has restado
-	        
-	        //en un bucle creo un deposito con el valor y la cantidad que toque
-	       // Deposito dep = new Deposito(valorMonedas[i], aux[i]);
-	        
 	        
 	    	auxDepos=new HashMap<Integer,Deposito>();
 	        
@@ -85,6 +99,40 @@ public class Principal {
 			return auxDepos;
 		}
 		
+		
+		public HashMap<String,Dispensador> crearDispensadoresAMano(){
+	        HashMap<String,Dispensador> auxDispens;
+	        Dispensador dispenCoca;
+	        Dispensador dispenFantNaranj;
+	        Dispensador dispenFantLimon;
+	        Dispensador dispenNestea;
+	        Dispensador dispenRedbull;
+	        Dispensador dispenMountView;
+			
+	        
+	    	auxDispens=new HashMap<String,Dispensador>();
+	        
+			dispenCoca=new Dispensador("cocacola",10, 100);
+			auxDispens.put("cocacola",dispenCoca);
+			dispenFantNaranj=new Dispensador("fantaNaranja",15, 100);
+			auxDispens.put("fantaNaranja", dispenFantNaranj);
+			dispenFantLimon=new Dispensador("fantanLimon",25, 100);
+			auxDispens.put("fantaLimon", dispenFantLimon);
+			dispenNestea=new Dispensador("nestea",5, 100);
+			auxDispens.put("nestea", dispenNestea);
+			dispenRedbull=new Dispensador("redbull",8, 200);
+			auxDispens.put("redbull",dispenRedbull );
+			dispenMountView=new Dispensador("mountaiView",7, 200);	
+			auxDispens.put("mountaiView",dispenMountView );
+			
+			
+			
+			return auxDispens;
+		}
+		
+		
+		
+		
 //		public HashMap<Integer,Deposito> crearDepositosFichero(){
 //			
 //		}
@@ -101,6 +149,7 @@ public class Principal {
 			
 			visor.mostarBienvenida();
 			
+			
 			while (!salir) { // Estructura que repite el algoritmo del menu principal hasta que se la condicion sea falsa
 				// Se muestra el menu principal
 				System.out.println(".......................... \n" 
@@ -116,34 +165,13 @@ public class Principal {
 					op = teclado.nextInt(); // Se le da a la variable op el valor del teclado
 					System.out.println("OPCION SELECCIONADA:" + op);
 					switch (op) {
-						case 1:// 
-							System.out.println("Elige producto: cocacola : 1 ,FantaNaranja: 2,FantaLimon: 3,Nestea: 4");
-							op1=teclado.nextInt();
-							switch (op1) {
-							case 1:
-								producto="cocacola";
-								cant=Integer.parseInt(fich1.CantidadBebidas(producto));
-								System.out.println(cant);
-								break;
+						case 1://
 							
-                             case 2:
-								InsertarMoneda();
-								break;
-                             case 3:
- 								
- 								break;
-                             case 4:
- 								
- 								break;
-
-							default:
-								break;
-							}
-						    
 							break;
 						case 2:// 
-							
-							break;
+							System.out.println("Introduce moneda:5,10,20,50,100,200");
+							op1=teclado.nextInt();
+							InsertarMoneda(op1);
 						case 3:
 							
 							break;
@@ -166,8 +194,8 @@ public class Principal {
 
 		}
 		
-		public void InsertarMoneda(){
-			
+		public void InsertarMoneda(int moneda){
+			clas.insertarMonedas(moneda);
 		}
 		
 		

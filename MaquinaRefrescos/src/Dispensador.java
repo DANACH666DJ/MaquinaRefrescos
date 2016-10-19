@@ -3,12 +3,14 @@ import java.util.Scanner;
 public class Dispensador {
 	private int precio;
 	private int cantidad;
-	private int producto;
+	private String producto;
+
 
 	
-	public Dispensador(){
-		precio=0;
-		cantidad=0;
+	public Dispensador(String producto,int cantidad, int precio){
+		this.producto=producto;
+		this.cantidad=cantidad;
+		this.precio = precio;
 		
 	}
 	
@@ -33,12 +35,12 @@ public class Dispensador {
 	}
 
 
-	public int getProducto() {
+	public String getProducto() {
 		return producto;
 	}
 
 
-	public void setProducto(int producto) {
+	public void setProducto(String producto) {
 		this.producto = producto;
 	}
 

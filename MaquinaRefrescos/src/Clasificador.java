@@ -5,17 +5,17 @@ import java.util.Map;
 public class Clasificador {
 	private int saldo;
 	private Visor visor;
-	private Dispensador disp;
 	private Seleccion selec;
 	private HashMap<Integer,Deposito> depos;
+	private HashMap<String, Dispensador> dispen;
 	
 	
 	public Clasificador(){
 		saldo=0;
 		visor=new Visor();
-		disp=new Dispensador();
 		selec=new Seleccion();
 		depos = new HashMap<Integer,Deposito>();
+		dispen = new HashMap<String,Dispensador>();
 	}
 	
 	public void insertarMonedas(int moneda){
@@ -52,13 +52,6 @@ public class Clasificador {
 		this.visor = visor;
 	}
 
-	public Dispensador getDisp() {
-		return disp;
-	}
-
-	public void setDisp(Dispensador disp) {
-		this.disp = disp;
-	}
 
 	public Seleccion getSelec() {
 		return selec;
@@ -68,9 +61,15 @@ public class Clasificador {
 		this.selec = selec;
 	}
 
-	public void setDepos(HashMap<Integer, Deposito> depos2) {
+	public void setDepos(HashMap<Integer, Deposito> depos) {
 		// TODO Auto-generated method stub
+		this.depos = depos;		
+	}
+
+	public void setDispensadores(HashMap<String, Dispensador> dispen) {
 		
+		// TODO Auto-generated method stub
+		this.dispen=dispen;
 		
 	}
 

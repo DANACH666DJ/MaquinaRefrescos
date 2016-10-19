@@ -2,3 +2,5 @@ cocacola=10
 fantaNaranja=15
 fantaLimon=25
 nestea=5
+redbull=8
+mountainView=7
